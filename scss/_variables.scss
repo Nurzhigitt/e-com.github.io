@@ -1,0 +1,35 @@
+$accent: #D7B399;
+$dark: #212121;
+$light: #f9f6f1;
+$white: #fff;
+$gray: #cbcfd4;
+$light-gray: #f4f4f4;
+$dark-grey: #8d8d8d;
+$important: #d84033;
+
+
+@mixin breakpoint($point) {
+    @if $point == lg {
+        @media (max-width: 992px) {
+            @content;
+        }
+    }
+    
+    @else if $point == md {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $point == sm {
+        @media (max-width: 576px) {
+            @content;
+        }
+    }
+
+    @else if $point == xs {
+        @media (max-width: 320px) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,328 @@
+@import 'variables';
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 120px;
+    padding-top: 30px;
+}
+
+.page {
+    &-light {
+        background-color: $light;
+    }
+
+    &-dark {
+        padding: 50px 0;
+        background-color: $dark;
+    }
+}
+
+
+.wrapper {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.nav {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+
+
+    &__item {
+        margin-right: 50px;
+    }
+
+    &__item:nth-child(3) {
+        margin-right: 0;
+    }
+
+    &__link {
+        display: block;
+        width: 100%;
+        color: $dark;
+        text-decoration: none;
+    }
+}
+
+.cart {
+    display: flex;
+    gap: 15px;
+    background-position: 0 center;
+
+    &__count {
+        background-color: $accent;
+        color: $white;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 10px 15px;
+        display: block;
+    }
+}
+
+
+.title-h2 {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.btn {
+    background-color: $accent;
+    color: $white;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 20px;
+
+    &-xs {
+        padding: 10px 15px;
+    }
+
+    &-center {
+        display: block;
+        margin: 0 auto;
+        max-width: 200px;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+}
+
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 100px;
+
+    @include breakpoint (lg) {
+        flex-wrap: wrap;
+        gap: 56px;
+    }
+
+    &-item {
+        flex: 0 0 50%;
+
+        @include breakpoint (lg) {
+            flex: 0 0 100%;
+        }
+    }
+
+    .sale {
+        @include breakpoint (lg) {
+            text-align: center;
+        }
+
+        &-descr {
+            font-size: 30px;
+        }
+
+        &-title {
+            font-size: 55px;
+            font-weight: 700;
+        }
+    }
+
+    .box {
+        @include breakpoint (lg) {
+            max-width: 600px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        position: relative;
+
+        &-image {
+            height: 250px;
+
+            img {
+                width: 100%;
+                max-width: 550px;
+            }
+        }
+
+
+        &-price {
+            position: absolute;
+            right: 0;
+            top: 5px;
+            text-align: right;
+
+            &_old {
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            &_new {
+                font-size: 42px;
+                font-weight: 700px;
+                color: $important;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.notice {
+    color: $white;
+    text-align: center;
+
+    &-title {
+        font-size: 30px;
+        text-transform: uppercase;
+
+        span {
+            font-weight: 700;
+        }
+    }
+}
+
+
+.collection {
+    padding: 48px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    @include breakpoint (lg) {
+        flex-wrap: wrap;
+    }
+
+    &-item {
+        color: $dark;
+        flex: 0 0 50%;
+
+        @include breakpoint (lg) {
+            flex: 0 0 100%;
+        }
+    }
+
+    &-title {
+        font-size: 24px;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    &-descr {
+        font-size: 16px;
+        margin-bottom: 36px;
+    }
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 100px 0 50px 0;
+
+    @include breakpoint (lg) {
+        flex-wrap: wrap;
+    }
+
+    &-item {
+        flex: 0 0 24%;
+
+        @include breakpoint (lg) {
+            flex: 0 0 48%;
+        }
+
+        @include breakpoint (xs) {
+            flex: 0 0 100%;
+        }
+    }
+
+    &-wallpaper {
+        background-color: $dark;
+        height: 200px;
+        width: 100%;
+    }
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include breakpoint (lg) {
+        flex-wrap: wrap;
+    }
+
+    &-logo {
+        display: block;
+        flex: 0 0 35%;
+
+        @include breakpoint (lg) {
+            flex: 0 0 100%;
+        }
+
+        @include breakpoint (md) {
+            margin-bottom: 16px;
+        }
+
+        @include breakpoint (sm) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &-nav {
+        color: $white;
+        display: flex;
+        flex: 0 0 65%;
+
+
+        @include breakpoint (lg) {
+            flex: 0 0 100%;
+        }
+
+        @include breakpoint (md) {
+            flex-wrap: wrap;
+        }
+
+        @include breakpoint (xs) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &-list {
+        width: 100%;
+        padding-left: 0;
+
+        @include breakpoint (md) {
+            flex: 0 0 48%;
+        }
+
+        @include breakpoint (xs) {
+            flex: 0 0 100%;
+        }
+
+        &-item {
+            margin-bottom: 10px;
+        }
+
+        &-title {
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        &-link {
+            color: $gray;
+            font-size: 14px;
+        }
+    }
+}
